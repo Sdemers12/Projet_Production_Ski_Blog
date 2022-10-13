@@ -1,0 +1,23 @@
+<%- include("partials/header") -%>
+
+<main class="mando">
+    <div class="col-12 d-flex justify-content-center align-items-center mb-3">
+        <h2 class="color-lb">Recherche des utilisateurs</h2>
+    </div>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+
+        <form method="get" action="/resultSearch" class="box-signup-signin d-flex flex-column">
+
+            <p class="mt-3">Cherche ici des utilisateurs afin de 
+                <br> les ajouter dans votre liste d'amis-skieurs! 
+                <br> C'est toujours plus agréable de faire de la pente à plusieurs! </p>
+
+            <label for="search">Entre le nom du skieur :</label>
+            <input type="text" id="search" name="search" required="required">
+            <button type="submit">Rechercher</button>
+        </form>
+    </div>
+    </div>
+    </div>
+</main>
+<%- include("partials/footer") -%>

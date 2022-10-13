@@ -1,0 +1,20 @@
+<%- include("partials/header-index") -%>
+
+<main class="mando">
+    <div class="col-12 d-flex justify-content-center align-items-center mb-3">
+        <h2 class="color-lb">Se connecter</h2>
+    </div>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+        <form method="post" action="/signin" class="box-signup-signin d-flex flex-column">
+            <label for="email">Votre courriel</label>
+            <input type="text" id="email" name="email" required="required">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" required="required">
+            <button type="submit">Connexion</button>
+            <p>Pas de compte? <span><a href="/signup">Créer un compte</a></span></p>
+        </form>
+    </div>
+    </div>
+    </div>
+</main>
+<%- include("partials/footer") -%>

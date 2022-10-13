@@ -1,0 +1,38 @@
+<%- include("partials/header") -%>
+
+<main class="bobaFett mando">
+    <div class="col-12 d-flex justify-content-center align-items-center mb-3">
+        <h2 class="color-lb">Proposer son spot</h2>
+    </div>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+        <form method="post" action="/spotform" class="box-signup-signin d-flex flex-column">
+            <label for="name">Nom du spot</label>
+            <input type="text" id="name" name="name" required="required">
+            <label for="description">Description</label>
+            <textarea type="text" id="description" name="description" required="required"></textarea>
+            <label for="address">Adresse</label>
+            <input type="text" id="address" name="address" required="required">
+
+            <label for="difficulty">Niveau de difficulté</label>
+            <select class="rounded-3" name="difficulty" id="difficulty" required>
+                <option value="Votre niveau"></option>
+                <option value="facile">Facile</option>
+                <option value="intermédiaire">Intermédiaire</option>
+                <option value="difficile">Difficile</option>
+            </select>
+        
+            <label for="coordinates">Coordonnées : Longitude</label>
+            <input type="number" id="longitude" name="longitude" required="required">
+
+            <label for="coordinates">Coordonnées : Latitude</label>
+            <input type="number" id="latitude" name="latitude" required="required">
+            
+            <button type="submit">Créer votre spot</button>
+
+        </form>
+
+    </div>
+    </div>
+    </div>
+</main>
+<%- include("partials/footer") -%>

@@ -1,0 +1,66 @@
+<%- include("partials/header") -%>
+
+<main class="bobaFett">
+
+  <div class="container">
+    <h2 class="color-lb text-center m-5">Résultat de la recherche de <br> <span><%= search %></span></h2>
+
+    <div class=" row justify-content-center align-items-center m-4 p-3">
+
+      <% resultKeyword.forEach(e => { %>
+
+      <div class="col-lg-3" onclick="location.href='/profilSkieur/<%=e.id%>';" style="cursor: pointer;">
+        <div class="container-search-friends m-3" style="width: 15rem;">
+          <img src="/img/skieur.jpg" alt="icon profil utilisateur">
+          <div class="container-friends-body p-3 d-flex justify-content-evenly align-items-center flex-column">
+            <h3 class="card-title text-center"><%= e.name %></h3>
+            <div class="d-flex">
+
+              <% let friendFound = false; %>
+              <% friends.forEach(verify => { %>
+              <% if (verify.id == e.id) { %>
+              <% friendFound = true; %>
+              <% } %>
+              <% }) %>
+
+              <% if(e.id === myID) { %>
+
+                <div class="d-flex flex-column align-items-center">
+                  <img src="/img/itsme.png" alt="c'est moi !" class="grogu">
+                <p>C'est mon profil !</p>
+              </div>
+              <% } else if (!friendFound) { %>
+
+              <form action="/resultSearch" method="POST">
+                <button type="submit"
+                  class="btn btn-secondary rounded-circle m-1 icons-ED d-flex justify-content-center align-items-center"><i
+                    class="bi bi-plus-circle"></i></button>
+                <input type="hidden" id="friendId" name="friendId" value="<%= e.id %>">
+              </form>
+
+              <% } else { %>
+
+                <form action="/resultSearch<%= e.id %>?_method=DELETE" method="POST">
+                  <button type="submit"
+                    class="btn btn-danger rounded-circle m-1 icons-ED d-flex justify-content-center align-items-center"><i
+                      class="bi bi-x-circle"></i></button>
+                  <input type="hidden" id="friendId" name="friendId" value="<%= e.id %>">
+                </form>
+
+                <% } %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <% }) %>
+
+    </div>
+
+
+  </div>
+
+</main>
+
+<%- include("partials/footer") -%>

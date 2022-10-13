@@ -1,0 +1,62 @@
+<%- include("partials/header") -%>
+<main class="bobaFett">
+    <div class="container">
+
+        <div class="row d-flex justify-content-center align-items-center container-profile m-3">
+            <div
+                class="col-lg-6 col-md-6 col-sm-0  d-none d-sm-block p-0 container-profile-gauche d-flex justify-content-center align-items-center">
+                <img src="img/portrait.jpg" alt="photo de profile" style="max-width: 100%;">
+
+            </div>
+            <div
+                class="col-lg-6 col-md-6 col-sm-12 p-0 container-profile-droite d-flex flex-column justify-content-between align-items-center">
+
+                <h3 class="mt-3">Ton profil de skieur</h3>
+                <h1>
+                    <%= data.name %>
+                </h1>
+                <div
+                    class="container-profile-description m-3 d-flex flex-column justify-content-center align-items-center">
+                    <span>Description</span>
+                    <p class="p-3 d-flex flex-column justify-content-center align-items-center">"Lorem ipsum dolor sit
+                        amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                        nostrud
+                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                        irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                        nulla
+                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                        officia
+                        deserunt mollit anim id est laborum."</p>
+                </div>
+                <div class="container-profile-contact m-3 d-flex flex-column justify-content-center align-items-center">
+                    <p class="m-3"><span>Courriel</span> : <br> <%= data.email %></p>
+                </div>
+                <div class="container-profile-edition d-flex justify-content-center align-items-center">
+                    <button type="button" class="btn btn-secondary rounded-circle m-3"><a href="/allspot"
+                            title="Découvrir les spots"><img src="/img/spot.png" alt=""></a></button>
+                    <button type="button" class="btn btn-secondary rounded-circle m-3"><a href="/spotform"
+                            title="Proposer son spot"><i class="bi bi-pencil"></i></a></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row d-flex justify-content-center align-items-center container-friends m-3 p-4">
+            <h2 class="text-center">Liste d'ami·es</h2>
+            <div class="col-lg-12 d-flex flex-wrap justify-content-between align-items-center">
+                <% showFriends.forEach(e => { %>
+                <div class="friends d-flex justify-content-between align-items-center m-1" onclick="location.href='/profilSkieur/<%=e.id%>';" style="cursor: pointer;">
+                    <img src="/img/icon.jpg" alt="icon utilisateur" class="me-4">
+                    <span><%= e.name %></span>
+                    <form action="/delete<%= e.id %>?_method=DELETE" method="POST">
+                        <button type="submit"
+                            class="btn btn-danger rounded-circle m-1 icons-ED d-flex justify-content-center align-items-center"><i
+                                class="bi bi-x-circle"></i></button>
+                    </form>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</main>
+<%- include("partials/footer") -%>

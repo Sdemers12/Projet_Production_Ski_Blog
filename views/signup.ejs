@@ -1,0 +1,22 @@
+<%- include("partials/header-index") -%>
+
+<main class="mando">
+    <div class="col-12 d-flex justify-content-center align-items-center mb-3">
+        <h2 class="color-lb">Créer un compte</h2>
+    </div>
+    <div class="col-12 d-flex justify-content-center align-items-center">
+        <form method="post" action="/signup" class="box-signup-signin d-flex flex-column">
+            <label for="email">Votre courriel</label>
+            <input type="text" id="email" name="email" required="required">
+            <label for="name">Votre nom</label>
+            <input type="text" id="name" name="name" required="required">
+            <label for="password">Mot de passe</label>
+            <input type="password" id="password" name="password" required="required">
+            <button type="submit">Créer un compte</button>
+            <p>Vous avez déjà un compte? <span><a href="/signin">Connexion</a></span></p>
+        </form>
+    </div>
+    </div>
+    </div>
+</main>
+<%- include("partials/footer") -%>

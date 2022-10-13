@@ -1,0 +1,80 @@
+<%- include("partials/header") -%>
+
+<main class="bobaFett mando">
+        <h1 class="color-lb text-center">Bienvenue cher skieur !</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                <div class="row">
+                    <div class="col-6 d-flex justify-content-start">
+                        <div class="container-flip m-3" onclick="location.href='/profile'" style="cursor: pointer;">
+                            <div class="card-container">
+                                <div class="card-front">
+                                    <img src="/img/profil-home.jpg" alt="profil utilisateur">
+                                </div>
+                                <div class="card-back d-flex flex-column justify-content-center align-items-center p-3">
+                                    <h2>Profil</h2>
+                                    <p>Mettre votre profil à jour.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center">
+                        <div class="container-flip m-3" onclick="location.href='/allspot'" style="cursor: pointer;">
+                            <div class="card-container">
+                                <div class="card-front">
+                                    <img src="/img/spot-feed.jpg" alt="montagne enneigé">
+                                </div>
+                                <div class="card-back d-flex flex-column justify-content-center align-items-center p-3">
+                                    <h2>Découvrir</h2>
+                                    <p>Venez découvrir les nouveaux spots près de chez vous !</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 d-flex justify-content-start">
+                        <div class="container-flip m-3" onclick="location.href='/spotform'" style="cursor: pointer;">
+                            <div class="card-container">
+                                <div class="card-front">
+                                    <img src="/img/spot-ajout.jpg" alt="montagne">
+                                </div>
+                                <div class="card-back d-flex flex-column justify-content-center align-items-center p-3">
+                                    <h2>Proposer</h2>
+                                    <p>Venez proposer les spots sur lequels vous vous rendez.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-flex justify-content-center">
+                        <div class="container-flip m-3" onclick="location.href='/searchFriends'" style="cursor: pointer;">
+                            <div class="card-container">
+                                <div class="card-front">
+                                    <img src="/img/friends.jpg" alt="Amies en randonnée">
+                                </div>
+                                <div class="card-back d-flex flex-column justify-content-center align-items-center p-3">
+                                    <h2>Ami·es</h2>
+                                    <p>Envie de trouver vos amis pour partir en viré ?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="col-6 d-flex justify-content-center">
+                    <div class="container-feed w-100 m-3">
+                            <div class="h-100 d-flex flex-column justify-content-center align-items-center p-3">
+                                <h2>Actualités</h2>
+                                <p>De nouvelles pistes ont été rajoutés sur la Montagne de la Mort</p>
+                                <p>150 nouveaux utilisateurs ces dernières 24h.</p>
+                                <p>150 nouveaux utilisateurs ces dernières 24h.</p>
+                            </div>
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+</main>
+
+<%- include("partials/footer") -%>

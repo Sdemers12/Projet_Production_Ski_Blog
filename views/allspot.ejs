@@ -1,0 +1,80 @@
+<%- include("partials/header") -%>
+
+<main class="bobaFett">
+
+  <div class="container">
+
+    <% showSpots.forEach(e => { %>
+
+    <div class="container-feed row justify-content-between align-items-center m-5" onclick="location.href='/spotdetail/<%=e._id%>';"
+      style="cursor: pointer;">
+
+      <img src="/img/mountain.jpg" alt="montagne" class="col-lg-4 d-none d-sm-block">
+
+      <div class="col-lg-7 col-sm-9">
+
+        <h3><%= e.name %></h3>
+
+        <span>Description :</span>
+        <p><%= e.description %></p>
+        <span>Adresse :</span>
+        <p><%= e.address %></p>
+        <span>Difficulté :</span>
+        <p><%= e.difficulty %></p>
+        <span>Coordonnées :</span>
+        <p><%= e.coordinates %></p>
+
+      </div>
+
+      <div class="col-lg-1 col-sm-3 d-flex justify-content-between">
+        <form action="/editSpot<%= e._id %>" method="get" class="d-inline">
+            <button type="submit" class="btn btn-secondary rounded-circle m-1"><i class="bi bi-pencil"></i></button>
+        </form> 
+        <form action="/allspot<%= e._id %>?_method=DELETE" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-danger rounded-circle m-1"><i class="bi bi-x-circle"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <% }) %>
+
+  </div>
+
+  <div class="container-pagination">
+    <nav aria-label="paginationAllSpot" class="d-flex justify-content-center">
+    <ul class="pagination">
+
+      <% if (pagePrevious > 0 ) { %>
+
+      <li class="page-item">
+        <a class="page-link" href="?page=<%= pagePrevious %>" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+
+      <% } %>
+
+      <% for (let i = 0; i < paginationSpot; i++) { %>
+
+      <li class="page-item"><a class="page-link" href="?page=<%= i+1 %>"><%= i+1 %></a></li>
+
+      <% } %>
+
+      <% if (pageNext <= paginationSpot ) { %>
+
+      <li class="page-item">
+
+        <a class="page-link" href="?page=<%= pageNext %>" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+
+      </li>
+
+      <% } %>
+    </ul>
+  </nav>
+</div>
+
+</main>
+
+<%- include("partials/footer") -%>

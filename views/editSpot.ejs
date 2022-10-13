@@ -1,0 +1,38 @@
+<%- include("partials/header") -%>
+
+<main class="bobaFett mando">
+
+    <div class="col-12 d-flex justify-content-center align-items-center mb-3">
+
+        <h2 class="color-lb">Edit ton spot</h2>
+    </div>
+
+    <div class="col-12 d-flex justify-content-center align-items-center">
+    <form action="/allspot<%= data._id %>?_method=put" class="box-signup-signin d-flex flex-column" method="post">
+        <label for="name">Nom du spot</label>
+        <input type="text" id="name" name="name" value="<%= data.name %>">
+        <label for="description">Description</label>
+        <textarea type="text" id="description" name="description"><%= data.description %></textarea>
+        <label for="address">Adresse</label>
+        <input type="text" id="address" name="address" value="<%= data.address %>">
+        <label for="difficulty">Niveau de difficulté</label>
+        <select name="difficulty" id="difficulty" value="selected">
+            <option><%= data.difficulty %></option>
+            <optgroup value="options" label="Les niveaux disponibles :"></optgroup>
+            <option value="facile">Facile</option>
+            <option value="intermédiaire">Intermédiaire</option>
+            <option value="difficile">Difficile</option>
+        </select>
+
+        <label for="coordinates">Coordonnées : Longitude</label>
+        <input type="number" id="longitude" name="longitude" value="<%= data.coordinates[0] %>">
+
+        <label for="coordinates">Coordonnées : Latitude</label>
+        <input type="number" id="latitude" name="latitude" value="<%= data.coordinates[1] %>">
+
+        <button type="submit">Change ton spot</button>
+    </form>
+    </div>
+</main>
+
+<%- include("partials/footer") -%>

@@ -1,0 +1,633 @@
+/*** FONTS ***/
+@font-face {
+    font-family: GothamL;
+    src: url(../fonts/Gotham-Light.otf);
+}
+
+@font-face {
+    font-family: GothamB;
+    src: url(../fonts/GothamBold.ttf);
+}
+
+@font-face {
+    font-family: GrandL;
+    src: url(../fonts/SF\ Grandezza\ Light.ttf);
+}
+
+@font-face {
+    font-family: GrandH;
+    src: url(../fonts/SF\ Grandezza\ Heavy.ttf);
+}
+
+/*** CODE PRINCIPAL ***/
+:root {
+    --cream: #F7F6F0;
+    --cream-o: rgba(247, 246, 240, 0.6);
+    --lightblue: #A7CBD5;
+    --gray: #71777D;
+    --midblue: #4D4C59;
+    --darkblue: #362C36;
+    --radius: 25px;
+    --shadow: 0 0 4px var(--darkblue);
+    --blur: blur(10px);
+    --bg-blur: rgba(247, 246, 240, 0.01);
+    --bg-1: url(../img/bg-1.jpg);
+    --bg-2: url(../img/bg-2.jpg);
+    --logo: url(../img/logo.png);
+}
+
+/*** INITIAL PAGE ***/
+* {
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none !important;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width:1600px) {
+    .logo-container img {
+        width: 25%;
+    }
+
+    .box-connexion {
+        padding: 1.5rem;
+    }
+}
+
+body {
+    background-color: rgba(54, 44, 54, 0.3) !important;
+    background-image: var(--bg-2);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1, h2,h3 {
+    font-family: GrandH;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2em !important;
+}
+
+h2 {
+    font-size: 1.5em !important;
+}
+
+h3 {
+    font-size: 1em !important;
+}
+
+p {
+    font-size: 0.75em;
+}
+
+p>span {
+    font-size: 1em;
+}
+
+.color-lb {
+    color: var(--lightblue) !important;
+}
+
+/*** ***** HEADER & NAV ***** ***/
+header {
+    width: 100%;
+    height: auto;
+    backdrop-filter: var(--blur);
+    background-color: var(--bg-blur);
+    position: fixed;
+    z-index: 10;
+    text-align: center;
+}
+
+nav>div>a:first-child {
+    width: 10%;
+}
+
+nav ul {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+}
+
+nav form {
+    width: 10%;
+}
+
+.bo-katan {
+    height: 30px !important;
+    background-color: var(--bg-blur) !important;
+    border-radius: var(--radius) !important;
+    border: 1px solid var(--lightblue) !important;
+    font-family: GothamL;
+    font-size:0.8rem;
+    text-transform:uppercase;
+}
+
+.bo-katan a{
+    color:var(--lightblue) !important;
+}
+
+.bobaFett {
+    margin-top: 5rem;
+}
+
+.mando {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*** ***** FOOTER ***** ***/
+footer div {
+    color: var(--lightblue);
+    font-family: GothamB;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 8px;
+    text-shadow: var(--shadow);
+}
+
+footer img {
+    margin: 0.5em;
+}
+
+/*** ***** INDEX ***** ***/
+.logo-container {
+    height: 100%;
+    width: auto;
+    top: 0;
+}
+
+.logo-container img {
+    max-width: 35%;
+    height: auto;
+}
+
+.presentation {
+    margin-top: 1.5em;
+    margin-bottom: 2em;
+    font-size: 15px;
+    color: var(--cream);
+    font-family: GothamL;
+    text-shadow: var(--shadow);
+    text-align: center;
+}
+
+.presentation span {
+    font-family: GrandH;
+    font-size: 22px;
+    color: var(--lightblue);
+    text-transform: uppercase;
+}
+
+.box-connexion {
+    max-width: 450px;
+    width: 100%;
+    max-height: 400px;
+    height: 100%;
+    min-height: 300px;
+    backdrop-filter: var(--blur);
+    background-color: var(--cream-o);
+    border-radius: var(--radius);
+}
+
+.box-connexion div {
+    font-family: GothamL;
+    font-size: 14px;
+    color: var(--darkblue);
+    text-align: center;
+}
+
+.box-connexion div span {
+    font-family: GothamB;
+    font-size: 14px;
+}
+
+.box-connexion button {
+    border-radius: var(--radius);
+    background-color: var(--darkblue);
+    color: var(--cream);
+    font-family: GrandH;
+    color: var(--lightblue);
+    padding: 5px 0px;
+    border: none;
+    width: 165px;
+}
+
+/*** ***** SIGN UP & SIGN IN ***** ***/
+.box-signup-signin {
+    width: 27%;
+    backdrop-filter: var(--blur);
+    background-color: var(--cream-o);
+    border-radius: var(--radius);
+    font-size: 18px;
+}
+
+.box-signup-signin label {
+    margin-bottom: 3px;
+    margin-left: 55px;
+    margin-top: 30px;
+    font-family: GrandH;
+    text-align: left;
+}
+
+.box-signup-signin input {
+    margin: 0px auto;
+    border-radius: var(--radius);
+    border: none;
+    width: 80%;
+    height: 35px;
+    font-family: GrandH;
+    font-size: 16px;
+    outline: 1px solid var(--darkblue);
+    padding-left: 10px;
+}
+
+.box-signup-signin input:focus {
+    outline: 4px solid var(--lightblue);
+}
+
+/*** —— PARTIE SPOT FORM —— ***/
+.box-signup-signin textarea {
+    margin: 0px auto;
+    border-radius: var(--radius);
+    border: none;
+    width: 80%;
+    height: 55px;
+    font-family: GrandH;
+    font-size: 16px;
+    outline: 1px solid var(--darkblue);
+}
+
+.box-signup-signin select {
+    margin: 0px auto;
+    border: none;
+    width: 80%;
+    height: 35px;
+    font-family: GrandH;
+    font-size: 16px;
+    outline: 1px solid var(--darkblue);
+}
+option{
+    font-family: GothamL;
+}
+optgroup{
+    text-transform: uppercase;
+    font-family: GothamB;
+    font-size: 1em;
+    color: var(--darkblue);    
+}
+
+/*** ————— ————— ***/
+.box-signup-signin button {
+    font-family: GrandH;
+    margin: 40px auto 30px;
+    border-radius: var(--radius);
+    background-color: var(--darkblue);
+    color: var(--lightblue);
+    padding: 7px 0px;
+    border: none;
+    width: 80%;
+}
+
+.box-signup-signin p {
+    text-align: center;
+    font-family: GothamL;
+    font-size: 16px;
+}
+
+.box-signup-signin span {
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+.box-signup-signin span a {
+    text-decoration: none;
+}
+
+/*** ***** ALL INPUTS ***** ***/
+input,textarea {
+    padding: 1em;
+}
+
+/*** ***** PROFILE ***** ***/
+.container-profile {
+    background-color: var(--cream-o);
+    backdrop-filter: var(--blur);
+    border-radius: var(--radius);
+    overflow: hidden;
+    max-height: 80vh !important;
+    height: 100%;
+}
+
+.container-skieur-gauche,.container-profile-gauche {
+    height: 100%;
+}
+
+.container-profile-gauche img {
+    width: 100%;
+    max-height: 70vh;
+    min-height: 100%;
+    display: block;
+    object-fit: cover;
+}
+.container-profile-droite {
+    height: 100%;
+}
+
+.container-profile-droite h2 {
+    color: var(--darkblue);
+}
+
+.container-profile-droite h3 {
+    color: var(--gray);
+    font-weight: bold;
+}
+
+.container-profile-description {
+    width: 90%;
+}
+
+.container-profile-description span {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: GothamB;
+    font-size: 1em;
+    color: var(--darkblue);
+}
+
+.container-profile-description p {
+    text-align: center;
+    font-family: GothamL;
+    color: var(--darkblue);
+    border: 1px solid var(--gray);
+    border-radius: var(--radius);
+    height: 15vh;
+    overflow: auto;
+}
+
+.container-profile-contact {
+    width: 90%;
+    border: 1px solid var(--gray);
+    border-radius: var(--radius);
+}
+
+.container-profile-contact p {
+    text-align: center;
+    font-family: GothamL;
+    color: var(--darkblue);
+}
+
+.container-profile-contact p span {
+    text-transform: uppercase;
+    font-family: GothamB;
+}
+
+.container-profile-contact button {
+    width: 65px;
+    height: 65px;
+    background-color: var(--lightblue);
+    border-color: var(--lightblue);
+}
+
+.container-profile-contact button:hover {
+    background-color: var(--cream-o);
+    border-color: var(--cream);
+}
+
+.container-profile-contact div img {
+    width: 30px;
+}
+
+.container-profile-edition button {
+    width: 65px;
+    height: 65px;
+}
+
+.container-profile-edition button a > i {
+    font-size: 2em;
+}
+
+.container-profile-edition .bi-pencil {
+    color: var(--lightblue);
+}
+
+.container-profile-edition p span {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: GothamB;
+    color: var(--darkblue);
+}
+
+/*** ***** PROFILE AMI ***** ***/
+
+.friends{
+    width:300px;
+}
+
+.friends img{
+    width:55px ;
+    height:55px;
+    border-radius:50%;
+    border:3px solid var(--darkblue);
+}
+
+.friends span{
+    font-family: GothamB;
+    font-size:1em;
+}
+.icons-ED{
+    width:28px;
+    height:28px;
+}
+.baby-yoda{
+    width:200px !important;
+}
+.grogu{
+    width:75px !important;
+    height:75px !important;
+}
+/*** ***** PROFILE SKIEUR ***** ***/
+.container-skieur {
+    background-color: var(--cream-o);
+    backdrop-filter: var(--blur);
+    border-radius: var(--radius);
+    overflow: hidden;
+    max-height: 60vh !important;
+    height: 100%;
+}
+.container-skieur-gauche img {
+    width: 100%;
+    max-height: 50vh;
+    min-height: 100%;
+    display: block;
+    object-position: center;
+    object-fit: cover;
+}
+/*** ***** RECHERCHE SKIEUR ***** ***/
+.container-search-friends img{
+    width:100%;
+    height:175px;
+    object-position: 0 50%;
+    object-fit: cover;
+    border-radius:25px 25px 0 0;
+}
+.container-friends-body{
+    width:100%;
+    height:150px;
+}
+/*** ***** PAGE ERROR ***** ***/
+.box-error {
+    width: 50%;
+    padding: 2%;
+    margin: 5%;
+    backdrop-filter: var(--blur);
+    background-color: var(--cream-o);
+    border-radius: var(--radius);
+    font-size: 1.5em;
+}
+.box-error img{
+    max-width:250px;
+    max-height:250px;
+    width:100%;
+    height:100%;
+    min-width:250px;
+    min-height:250px;
+    border-radius:50%;
+    object-fit:cover;
+    box-shadow:1px 1px 10px var(--midblue);
+}
+.box-error p{
+    text-align:center;
+    font-family: GrandH;
+    color: var(--darkblue);
+    font-size:1.5rem;
+}
+.box-error a{
+    text-align:center;
+    font-size:1rem;
+    font-family: GothamB;
+}
+/*** ***** PAGE SPOT FEED ***** ***/
+.container-home,.container-home-2, .container-friends,
+.container-search-friends, .container-feed, .card-front, 
+.card-back {
+    backdrop-filter: var(--blur);
+    background-color: var(--cream-o);
+    border-radius: var(--radius);
+    color: var(--darkblue);
+}
+.container-feed{
+    padding: 1.5rem;
+}
+
+.container-feed img {
+    max-width: 30%;
+    min-width: 15%;
+    width: 100%;
+    height: 250px;
+    border-radius: var(--radius);
+    object-fit: cover;
+}
+
+.container-feed div:last-child button {
+    width: 40px;
+    height: 40px;
+}
+
+.container-feed div span {
+    text-transform: uppercase;
+    font-family: GothamB;
+    font-size: 1em;
+}
+
+.container-feed div p {
+    font-family: GothamL;
+}
+
+/*** ***** PAGE SPOT DETAILS ***** ***/
+.container-spot-valide {
+    text-align: center;
+    font-family: GothamL;
+    color: var(--darkblue);
+    border: 1px solid var(--gray);
+    border-radius: var(--radius);
+}
+
+.container-spot-valide p span {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: GothamB;
+    color: var(--darkblue);
+}
+
+/*** ***** PAGE HOME ***** ***/
+.container-home{
+    width:300px;
+    height:300px;
+}
+.container-home img{
+    height:125px;
+}
+.container-home p{
+    font-size:1em;
+    font-family: GothamB;
+    color: var(--darkblue);
+}
+
+/*** ***** Flip card ***** ***/
+ .container-flip {
+    width: 265px;
+    height: 265px;
+    perspective: 800px; 
+  }
+.card-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .container-flip:hover .card-container {
+    transform: rotateY(180deg);
+  }
+
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+  }
+  .card-front img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius: var(--radius);
+  }
+  .card-back {
+    color: var(--darkblue);
+    transform: rotateY(180deg);
+  }
